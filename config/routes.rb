@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  root to: 'visitors#index'
   root :to => "visitors#index"
   resources :users, :only => [:index, :show]
   get '/auth/:provider/callback' => 'sessions#create'
