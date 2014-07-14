@@ -1,1 +1,16 @@
-<%# add navigation links to this file %>
+<li>
+  <%= link_to 'rsg_github_gem', root_path, class: 'navbar-brand' %>
+</li>
+
+<% unless current_user %>
+  <li>
+    <%= link_to "Sign in with Github", "/signin" %>
+  </li>
+<% else %>
+  <li>
+    <%= link_to "Github Profile", "/github" %>
+  </li>
+  <li>
+    <%= link_to "Sign out", "/signout" %>
+  </li>
+<% end %>
